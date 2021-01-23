@@ -5,15 +5,8 @@ class Node:
         self.right = None
         self.data = data 
         
-    #imprime os valores armazenados na árvore binária de forma recursiva
-    def PrintValue(self):
-        if self.left:
-            self.left.PrintValue()
-        if self.right:
-            self.right.PrintValue()
-        print(self.data)
-        
-    #insere um valor à esquerda ou à direita do nó raíz
+         
+    #insere um valor à esquerda ou à direita do nó 
     def insert(self, data):
         if self.data:
             if data < self.data:
@@ -42,16 +35,49 @@ class Node:
         else:
             print(str(self.data) + ' Foi encontrado')
 
+    #preorder - imprime o valor armazenado em um nó e em seguida repete recursivamente para a esquerda e para a direita (imprime na ordem de inserção)
+    def preval(self):
+        print(str(self.data))
+        if self.left:
+            self.left.preval()
+        if self.right:
+            self.right.preval()
+    
+    #postorder - imprime o valor armazenado em um nó depois de visitar a esquerda e direita de forma recursiva
+    def postorderval(self):
+        if self.left:
+            self.left.postorderval()
+        if self.right:
+            self.right.postorderval()
+        print(self.data)
+
+    #inorder - imprime os valores ordenados da esquerda para a direita (do menor ao maior valor)
+    def inorderval(self):
+        if self.left:
+            self.left.inorderval()
+        print(self.data)
+        if self.right:
+            self.right.inorderval()
 
 
 #instancia a árvore
 root = Node(10)
-root.insert(5)
+root.insert(7)
+root.insert(11)
 root.insert(6)
-root.insert(81)
-root.insert(17)
+root.insert(8)
+root.insert(9)
+root.insert(1)
+root.insert(11)
+root.insert(20)
+root.insert(14)
+root.insert(22)
 
-root.PrintValue()
+#imprime os dados armazenados na árvore
+
+root.preorderval()
+root.inorderval()
+root.postorderval()
 
 #verifica existência dos valores
 print(root.find(17))
