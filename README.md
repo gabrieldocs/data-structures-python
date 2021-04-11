@@ -46,6 +46,19 @@ Exemplo de saída com fib-memo.py:
 }
 ```
 
+## Update 01: Conversão para o formato de módulos
+
+Como realizei a implementação do método de fibonacci com memoização e com o uso de cache optei por ter um módulo próprio com
+as funções, por hora pertencentes a arquivo distintos.
+
+Para criar um módulo é necessário adicionar uma nova pasta ao projeto com o arquivo __init__.py. 
+
+para importar de um módulo pode-se fazer:
+
+    from nome_do_modulo.nome_do_arquivo import nome_da_func 
+
+Demais detalhes e otimizações poderãos ser feitos futuramente.
+
 ## Árvore binária de busca
 
 

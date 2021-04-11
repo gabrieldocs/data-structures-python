@@ -9,15 +9,9 @@ from functools import lru_cache
 # passando None como valor para maxsize faz com que não haja um limite para a quantidade de chamadas armazenadas
 
 @lru_cache(maxsize=None)
-def fib(n: int)-> int:
+def fib_cache(n: int)-> int:
     if n < 2:
         return n 
     else:
-        return fib(n-2) + fib(n-1)
+        return fib_cache(n-2) + fib_cache(n-1)
 
-if __name__ == "__main__":
-    print(fib(4))
-    print(fib(8))
-    print(fib(12))
-    print(fib(12))
-    print(fib(50))

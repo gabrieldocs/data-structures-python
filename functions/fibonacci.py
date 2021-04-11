@@ -7,7 +7,3 @@ def fib(n:int)->int:
         return n     
     return fib(n-2) + fib(n-1) #caso recursivo
 
-
-# Executando o método fib() 
-if __name__ == "__main__":
-    print(fib(6))
