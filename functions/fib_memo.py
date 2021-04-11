@@ -9,12 +9,8 @@ memo: Dict[int, int] = {
     1:1
 } # Adicionando aos casos de base 
 
-def fib(n: int) -> int:
+def fib_memo(n: int) -> int:
     if n not in memo:
-        memo[n] = fib(n - 2) + fib( n - 1 ) #etapa de memoização 
+        memo[n] = fib_memo(n - 2) + fib_memo( n - 1 ) #etapa de memoização 
     return memo[n]
 
-if __name__ == "__main__":
-    print(fib(5))
-    print(fib(20))
-    print(json.dumps(memo, indent=4))
